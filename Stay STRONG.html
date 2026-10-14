@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Stay STRONG</title>
+<style>
+:root{--sky:#3B9BFF;--navy:#050B2A;--gold:#FFB020;--cream:#F4F8FF;--flagR:#A51931;--flagB:#2D2A4A;
+--cut:polygon(14px 0,calc(100% - 14px) 0,100% 14px,100% calc(100% - 14px),calc(100% - 14px) 100%,14px 100%,0 calc(100% - 14px),0 14px);
+--th:"Noto Sans Thai","Leelawadee UI","Thonburi",Tahoma,sans-serif;--en:Impact,"Arial Black",sans-serif}
+*{box-sizing:border-box;margin:0}
+html,body{min-height:100%}
+body{font-family:var(--th);font-size:16px;color:var(--cream);background:var(--navy);overflow-x:hidden;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+#bg{position:fixed;inset:0;z-index:0;background:radial-gradient(circle at 18% 8%,#fff 0,rgba(255,255,255,.9) 3%,rgba(255,240,190,.5) 9%,transparent 28%),linear-gradient(180deg,#1a6fe0 0%,#3B9BFF 45%,#9ed3ff 72%,#050B2A 73%)}
+#bg svg{position:absolute;left:0;bottom:0;width:100%;height:60%}
+.cloud{position:absolute;background:#fff;border-radius:50px;opacity:.85;filter:blur(2px)}
+.tree{position:absolute;bottom:26%;width:14vw;max-width:150px;height:30vh;background:radial-gradient(circle at 50% 35%,#1f9d55 0,#0d5f33 60%,transparent 62%);opacity:.9}
+.tree.l{left:-3vw}.tree.r{right:-3vw}
+#flag{position:fixed;right:8px;top:8px;width:clamp(70px,16vw,150px);z-index:1;transform-origin:left center;animation:wave 3s ease-in-out infinite alternate}
+@keyframes wave{from{transform:skewY(-3deg) scaleX(1)}to{transform:skewY(3deg) scaleX(.94)}}
+#app{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:16px 14px 40px}
+.sk{display:inline-block;transform:skewX(-8deg);font-weight:800}
+/* โลโก้ */
+.hero{text-align:center;padding-top:20px}
+.logo{display:inline-block;transform:skewX(-8deg) rotate(-2deg);line-height:.95;animation:slam .8s cubic-bezier(.2,1.6,.4,1) both}
+@keyframes slam{from{transform:skewX(-8deg) rotate(-2deg) scale(2.4);opacity:0}to{transform:skewX(-8deg) rotate(-2deg) scale(1);opacity:1}}
+.stay{display:block;text-align:left;font:italic 900 clamp(34px,9vw,64px) var(--en);color:#fff;-webkit-text-stroke:.1em #1d5fe0;paint-order:stroke fill;text-shadow:0 0 16px #3B9BFF;margin-left:4%}
+.strong{position:relative;display:inline-block;font:900 clamp(60px,18vw,132px) var(--en);letter-spacing:.02em}
+.lay{display:block;white-space:nowrap}
+.back{color:var(--navy);-webkit-text-stroke:.13em var(--navy);paint-order:stroke fill;text-shadow:0 .07em 0 #000,0 .12em .12em rgba(0,0,0,.6)}
+.front{position:absolute;left:0;top:0;background:linear-gradient(180deg,#FFF27A 0,#FFB020 45%,#FF6A00 100%);-webkit-background-clip:text;background-clip:text;color:transparent;overflow:hidden}
+.front::after{content:"";position:absolute;top:0;bottom:0;width:30%;left:-40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.85),transparent);animation:shine 3.2s 1s infinite;-webkit-text-fill-color:initial}
+@keyframes shine{to{left:130%}}
+.o{position:relative;display:inline-block;font-style:normal}
+.ban{position:absolute;left:50%;top:50%;width:1.05em;height:1.05em;transform:translate(-50%,-48%);-webkit-text-fill-color:initial}
+.crown{position:absolute;left:50%;top:-.42em;width:.6em;transform:translateX(-50%);-webkit-text-fill-color:initial}
+.banner{display:inline-block;margin:14px auto 6px;padding:10px 34px;font-weight:800;font-size:clamp(16px,3.6vw,24px);background:linear-gradient(180deg,#0b1f6e,#06104a);clip-path:polygon(16px 0,calc(100% - 16px) 0,100% 50%,calc(100% - 16px) 100%,16px 100%,0 50%);filter:drop-shadow(0 0 8px #4FC3FF);box-shadow:inset 0 0 0 2px #4FC3FF;text-shadow:0 0 8px #4FC3FF}
+.tag{font-weight:800;font-size:clamp(15px,3vw,20px);text-shadow:0 2px 6px #000;margin-top:6px}
+.tag span{color:var(--gold)}
+/* ปุ่ม */
+.btn{font:800 17px var(--th);min-height:46px;padding:0 26px;border:0;color:#fff;cursor:pointer;background:linear-gradient(180deg,var(--b1,#FFB020),var(--b2,#FF6A00));clip-path:polygon(12px 0,100% 0,calc(100% - 12px) 100%,0 100%);filter:drop-shadow(0 0 8px var(--b2,#FF6A00));transition:transform .1s;text-shadow:0 1px 3px rgba(0,0,0,.5);display:inline-flex;align-items:center;gap:8px;justify-content:center}
+.btn:active{transform:scale(.94) translateY(2px)}
+.btn.sec{--b1:#3B9BFF;--b2:#1d5fe0}.btn.gr{--b1:#555d7a;--b2:#2a3050}
+.btn:focus-visible,.opt:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:18px 0}
+/* การ์ด */
+.grid{display:grid;grid-template-columns:1fr;gap:22px;margin-top:18px}
+@media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}
+.cw{filter:drop-shadow(0 0 10px var(--g));animation:cardin .6s both;animation-delay:calc(var(--i)*.15s + .6s)}
+@keyframes cardin{from{opacity:0;transform:translateY(20px) scale(.95);filter:brightness(.3)}}
+.c{clip-path:var(--cut);background:linear-gradient(135deg,var(--g),var(--m));padding:3px;height:100%}
+.ci{clip-path:var(--cut);height:100%;padding:14px;display:flex;flex-direction:column;gap:10px;position:relative;
+background:repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0 1px,transparent 1px 22px),linear-gradient(160deg,var(--d),#050B2A 90%);box-shadow:inset 0 0 0 3px var(--d),inset 0 0 0 4px var(--g)}
+.ch{display:flex;align-items:center;gap:12px}
+.hex{width:62px;height:70px;flex:none;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:linear-gradient(160deg,var(--g),var(--m));display:grid;place-items:center;font:italic 900 40px var(--en);color:#fff;text-shadow:0 2px 0 var(--d)}
+.hex.big{width:120px;height:136px;font-size:78px}
+.en{font:italic 800 20px var(--en);color:var(--g);letter-spacing:.03em}
+.th{font-weight:800;font-size:22px;color:#fff;transform:skewX(-8deg);display:inline-block}
+.art{position:relative;height:190px;border-radius:18px;overflow:hidden;background:radial-gradient(circle at 50% 70%,var(--m),var(--d));border:2px solid var(--g);display:grid;place-items:center}
+.art svg.chr{height:100%;position:relative;z-index:1}
+.art img{width:100%;height:100%;object-fit:cover}
+.chip{position:absolute;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:#fff;background:rgba(255,255,255,.12);border:2px solid var(--g);box-shadow:0 0 12px var(--g);animation:pulse 2.6s ease-in-out infinite}
+.chip svg{width:20px;height:20px}
+@keyframes pulse{50%{box-shadow:0 0 22px var(--g);transform:scale(1.07)}}
+.quote{font-weight:700;font-size:16px;text-align:center;line-height:1.5}
+.pan{display:flex;gap:10px;align-items:center;background:rgba(255,255,255,.07);border:1px solid var(--g);border-radius:12px;padding:8px 10px;font-size:15px}
+.pan b{font-size:20px;color:var(--g);display:flex;align-items:center;gap:6px;white-space:nowrap}
+.pan svg{width:22px;height:22px}
+.foot{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:12px;background:linear-gradient(90deg,rgba(0,0,0,.45),var(--d));border:1px solid var(--g);font-weight:700;font-size:15px}
+.foot svg{width:24px;height:24px;color:var(--g);flex:none}
+.foot.open svg{animation:keyopen .9s both}
+@keyframes keyopen{0%{transform:rotate(-30deg) scale(.5)}60%{transform:rotate(15deg) scale(1.4);filter:drop-shadow(0 0 12px #fff)}100%{transform:none}}
+.gtrophy{color:#6b6f86}.gtrophy.on{color:var(--gold)}.gtrophy.on svg{filter:drop-shadow(0 0 6px var(--gold))}
+.locked .art,.locked .quote,.locked .hex{filter:grayscale(.9) brightness(.55)}
+.locked .cw,.cw.locked{filter:drop-shadow(0 0 3px #555)}
+.lk{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:rgba(5,11,42,.45);text-align:center;font-weight:800;padding:20px;pointer-events:none}
+.lk svg{width:54px;height:54px}
+.cw.play .c{animation:glowb 2.4s ease-in-out infinite}
+@keyframes glowb{50%{filter:brightness(1.35)}}
+.done{position:absolute;top:10px;right:10px;z-index:2;display:flex;align-items:center;gap:6px;background:#12b76a;color:#fff;font-weight:800;font-size:14px;padding:4px 10px;border-radius:20px;box-shadow:0 0 10px #12b76a}
+.done svg{width:16px;height:16px}
+.sc{font-weight:800;color:#7CFFB0;text-align:center}
+/* กติกา */
+.rules{margin:26px auto 0;max-width:760px;padding:18px 22px;background:rgba(5,11,42,.82);border:2px solid #4FC3FF;clip-path:var(--cut);box-shadow:inset 0 0 18px rgba(79,195,255,.3)}
+.rules h2{color:var(--gold);margin-bottom:6px;font-size:22px}
+.rules li{margin:6px 0 6px 22px;line-height:1.6}
+.slog{text-align:center;margin-top:26px;font-weight:800;font-size:clamp(17px,3.4vw,24px);text-shadow:0 2px 8px #000}
+.ribbon{height:10px;margin:14px auto 0;max-width:340px;background:linear-gradient(90deg,var(--flagR) 0 20%,#fff 20% 40%,var(--flagB) 40% 60%,#fff 60% 80%,var(--flagR) 80%);border-radius:6px}
+/* หน้าอื่น */
+.panel{max-width:720px;margin:20px auto;padding:22px;background:rgba(5,11,42,.88);clip-path:var(--cut);border:0;box-shadow:inset 0 0 0 2px var(--g),inset 0 0 22px var(--m);text-align:center}
+.panel.wrap{filter:drop-shadow(0 0 12px var(--g))}
+.panel .art{height:260px;margin:14px 0}
+.hd{display:flex;align-items:center;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.prog{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;margin:12px 0}
+.prog i{height:10px;border-radius:5px;background:rgba(255,255,255,.18)}
+.prog i.ok{background:#2ECC71;box-shadow:0 0 6px #2ECC71}.prog i.no{background:#FF3B4E}.prog i.cur{background:var(--g);animation:pulse 1.4s infinite}
+.qt{font-weight:800;font-size:clamp(18px,3.6vw,23px);line-height:1.5;text-align:left;margin:14px 0}
+.opts{display:grid;gap:10px}
+.opt{display:flex;align-items:center;gap:12px;text-align:left;font:700 17px/1.4 var(--th);color:#fff;min-height:54px;padding:8px 14px;cursor:pointer;background:rgba(255,255,255,.06);border:2px solid var(--g);clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);transition:.15s}
+.opt:hover:not(:disabled){background:rgba(255,255,255,.14)}
+.opt .hx{width:34px;height:38px;flex:none;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:linear-gradient(var(--g),var(--m));display:grid;place-items:center;font-weight:800}
+.opt:disabled{cursor:default}
+.opt.right{border-color:#2ECC71;background:rgba(46,204,113,.25);box-shadow:0 0 16px #2ECC71}
+.opt.wrong{border-color:#FF3B4E;background:rgba(255,59,78,.25);box-shadow:0 0 16px #FF3B4E;animation:shake .4s}
+.opt.dim{opacity:.5}
+@keyframes shake{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.exp{margin-top:14px;padding:12px 14px;text-align:left;border-radius:12px;line-height:1.6;animation:up .35s both;border-left:6px solid}
+.exp.ok{background:rgba(46,204,113,.18);border-color:#2ECC71}.exp.bad{background:rgba(255,59,78,.18);border-color:#FF3B4E}
+@keyframes up{from{transform:translateY(24px);opacity:0}}
+.big{font:900 clamp(48px,12vw,84px) var(--en);color:var(--gold);text-shadow:0 0 18px var(--gold)}
+.rv{text-align:left;margin-top:12px;display:grid;gap:10px}
+.rv div{padding:10px 12px;background:rgba(255,255,255,.07);border-radius:10px;line-height:1.6;font-size:16px}
+.rv small{color:#FF9aa5;display:block}.rv em{color:#7CFFB0;font-style:normal;display:block}
+.trophy{width:min(240px,60vw);margin:10px auto;animation:bounce 1.2s cubic-bezier(.2,1.6,.4,1) both;filter:drop-shadow(0 0 24px var(--gold))}
+@keyframes bounce{from{transform:scale(0) rotate(-20deg)}}
+.rays{position:relative}.rays::before{content:"";position:absolute;left:50%;top:50%;width:360px;height:360px;margin:-180px;background:repeating-conic-gradient(rgba(255,214,90,.35) 0 8deg,transparent 8deg 20deg);border-radius:50%;animation:spin 14s linear infinite;-webkit-mask:radial-gradient(circle,#000 20%,transparent 70%);mask:radial-gradient(circle,#000 20%,transparent 70%)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.sum{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}
+.sum div{padding:8px;border-radius:10px;background:rgba(255,255,255,.08);font-weight:800}
+.mod{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.7);display:grid;place-items:center;padding:16px}
+.mod .panel{margin:0;background:#0a1240}
+#cf{position:fixed;inset:0;z-index:30;pointer-events:none}
+.snd{position:fixed;left:10px;bottom:10px;z-index:15;min-height:44px;min-width:44px;border-radius:50%;border:2px solid #4FC3FF;background:rgba(5,11,42,.85);color:#fff;cursor:pointer;display:grid;place-items:center}
+.snd svg{width:22px;height:22px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="bg" aria-hidden="true">
+ <div class="cloud" style="left:8%;top:14%;width:150px;height:44px"></div>
+ <div class="cloud" style="left:55%;top:24%;width:200px;height:54px"></div>
+ <div class="tree l"></div><div class="tree r"></div>
+ <svg id="sky1" viewBox="0 0 1200 400" preserveAspectRatio="none"></svg>
+</div>
+<svg id="flag" viewBox="0 0 120 84" aria-hidden="true"><rect x="0" y="0" width="120" height="14" fill="#A51931"/><rect y="14" width="120" height="14" fill="#F4F8FF"/><rect y="28" width="120" height="28" fill="#2D2A4A"/><rect y="56" width="120" height="14" fill="#F4F8FF"/><rect y="70" width="120" height="14" fill="#A51931"/></svg>
+<canvas id="cf" aria-hidden="true"></canvas>
+<main id="app"></main>
+<button class="snd" id="snd" aria-label="เปิดหรือปิดเสียง"></button>
+<script>
+/* ================= DATA ================= */
+// ใส่ URL หรือ data URI เพื่อแทนภาพ SVG ที่วาดเอง
+const ASSETS = { hero:"", S:"", T:"", R:"", O:"", N:"", G:"" };
+
+// ตัวช่วยสร้างข้อสอบ: Q(โจทย์, ถูก, ผิด1, ผิด2, ผิด3, เฉลย) กระจายตำแหน่งคำตอบถูกให้เท่า ๆ กัน
+const POS=[2,0,3,1,0,2,1,3,1,0];
+function mk(off,arr){return arr.map((r,i)=>{const p=POS[(i+off)%10],w=r.slice(2,5),ch=[];let k=0;for(let j=0;j<4;j++)ch.push(j===p?r[1]:w[k++]);return{q:r[0],choices:ch,answer:p,explain:r[5]}})}
+const QUESTIONS = {
+S: mk(0,[
+["ค่าขนมเหลือเดือนละ 300 บาท ทำอย่างไรจึงสอดคล้องความพอเพียง?","แบ่งออมส่วนหนึ่ง ใช้เท่าที่จำเป็น","ใช้หมดก่อนแล้วค่อยขอเพิ่ม","ยืมเพื่อนซื้อของตามเทรนด์","ซื้อทุกอย่างที่ลดราคา","การรู้จักประมาณตนและออมไว้ คือหัวใจของความพอเพียง"],
+["สามห่วงของเศรษฐกิจพอเพียงคือข้อใด?","พอประมาณ มีเหตุผล มีภูมิคุ้มกัน","ประหยัด อดทน สะสม","รวดเร็ว แข่งขัน ร่ำรวย","เก็บเงิน ลงทุน เสี่ยง","สามห่วงคือ พอประมาณ มีเหตุผล และมีภูมิคุ้มกันที่ดี"],
+["สองเงื่อนไขของเศรษฐกิจพอเพียงคือข้อใด?","ความรู้ และคุณธรรม","เงินทุน และเส้นสาย","ชื่อเสียง และอำนาจ","ความเร็ว และโชค","ต้องใช้ความรู้คู่กับคุณธรรมในการตัดสินใจ"],
+["ความโลภที่ไม่รู้จักพอมักนำไปสู่อะไร?","ยอมโกงเพื่อให้ได้เกินความจำเป็น","การออมที่มากขึ้น","ความสุขที่ยั่งยืน","การแบ่งปันมากขึ้น","ความอยากได้ไม่สิ้นสุดทำให้คนยอมทำผิดได้"],
+["อยากได้เกมใหม่แต่เงินไม่พอ เพื่อนชวนหยิบเงินกองกลางไปก่อน ควรทำอย่างไร?","ปฏิเสธ แล้วเก็บเงินของตัวเอง","ยืมไปก่อนแล้วค่อยคืน","หยิบเฉพาะวันนี้วันเดียว","บอกให้เพื่อนหยิบแทน","เงินกองกลางไม่ใช่ของส่วนตัว การหยิบไปคือการโกง"],
+["“ภูมิคุ้มกัน” ในชีวิตนักเรียนหมายถึงข้อใด?","มีเงินออมและแผนรับมือเหตุไม่คาดฝัน","ซื้อประกันทุกประเภท","ไม่ยุ่งกับใคร","ใช้เงินให้หมดทุกเดือน","การเตรียมพร้อมช่วยให้ไม่ต้องหาทางลัดเมื่อเดือดร้อน"],
+["ข้อใดไม่ใช่การพอประมาณ?","เป็นหนี้เพื่อซื้อของอวดเพื่อน","ซื้อของตามความจำเป็น","จดรายจ่ายประจำวัน","เลือกใช้ของที่มีอยู่ก่อน","การเป็นหนี้เพื่ออวดเกินกำลังไม่ใช่ความพอประมาณ"],
+["การจดบัญชีรายรับรายจ่ายช่วยเรื่องใดได้ดีที่สุด?","เห็นว่าใช้เกินตัวตรงไหนและปรับได้","ทำให้เงินเพิ่มเอง","ทำให้ไม่ต้องออม","ทำให้ซื้อของได้ไม่จำกัด","ข้อมูลที่จดไว้ช่วยวางแผนและลดการใช้เกินตัว"],
+["ทำไมการออมสม่ำเสมอจึงช่วยลดแรงจูงใจทุจริต?","มีเงินสำรองจึงไม่ต้องหาทางลัดยามเดือดร้อน","เพราะทำให้รวยเร็ว","เพราะไม่ต้องทำงาน","เพราะไม่มีใครรู้","เงินสำรองลดแรงกดดันที่อาจผลักให้ทำผิด"],
+["เจ้าหน้าที่รายได้พอใช้แต่ยังรับเงินใต้โต๊ะเพราะอยากรวยกว่าเดิม สะท้อนว่าขาดสิ่งใด?","ความรู้จักพอและคุณธรรม","ความขยันเรียนรู้","ความสามารถด้านบัญชี","เวลาว่าง","คนที่ไม่รู้จักพอมักหาประโยชน์ที่ไม่ชอบมาเพิ่ม"]]),
+T: mk(3,[
+["ชมรมเก็บค่าสมาชิก วิธีใดโปร่งใสที่สุด?","สรุปรายรับรายจ่ายแจ้งสมาชิกทุกเดือน","ให้ประธานเก็บเงินไว้คนเดียว","แจ้งเฉพาะกรรมการ","ไม่ต้องแจ้งถ้าไม่มีใครถาม","การเปิดเผยข้อมูลสม่ำเสมอทำให้ทุกคนตรวจสอบได้"],
+["ประธานนักเรียนใช้งบจัดงานโดยไม่แจ้งใคร ปัญหาคืออะไร?","ตรวจสอบไม่ได้ และเสี่ยงต่อการทุจริต","ไม่มีปัญหา เพราะเป็นประธาน","ทำให้งานเสร็จเร็ว","ทำให้ประหยัดเวลา","เงินส่วนรวมต้องเปิดเผยการใช้จ่ายให้ตรวจสอบได้"],
+["สิทธิรับรู้ข้อมูลข่าวสารของรัฐหมายถึงข้อใด?","ประชาชนขอดูข้อมูลของรัฐได้ เว้นแต่ที่กฎหมายห้ามเปิดเผย","รัฐต้องเปิดทุกข้อมูลโดยไม่มีข้อยกเว้น","เฉพาะข้าราชการดูได้","ต้องจ่ายเงินทุกครั้ง","ประชาชนมีสิทธิขอข้อมูล โดยมีข้อยกเว้นตามกฎหมาย"],
+["จัดซื้อจัดจ้างโปร่งใสหมายถึงข้อใด?","เปิดเผยเกณฑ์ ราคา และผู้ชนะให้ตรวจสอบได้","เลือกเจ้าที่รู้จักกัน","ตกลงราคากันเงียบ ๆ","ไม่ประกาศผล","ความเปิดเผยทำให้ลดโอกาสฮั้วและเอื้อประโยชน์"],
+["โรงเรียนซื้อคอมพิวเตอร์ ประกาศราคาและผู้ชนะต่อสาธารณะดีอย่างไร?","ลดโอกาสฮั้วและเปิดให้คนตรวจสอบ","ทำให้ราคาสูงขึ้นเสมอ","ทำให้ซื้อช้าลงเท่านั้น","ไม่มีประโยชน์","ข้อมูลที่เปิดเผยช่วยให้ผู้เกี่ยวข้องช่วยกันตรวจ"],
+["ประชาชนมีส่วนตรวจสอบการใช้เงินส่วนรวมได้อย่างไร?","ติดตามข้อมูลที่เปิดเผย สอบถาม และแจ้งเบาะแส","รอให้ผู้ใหญ่ทำให้ทั้งหมด","ไม่ทำอะไรเพราะไม่ใช่เรื่องของเรา","ปล่อยให้ข่าวลือตัดสิน","การมีส่วนร่วมของประชาชนคือพลังตรวจสอบสำคัญ"],
+["เหรัญญิกบอกเงินกองกลางหายแต่ไม่ยอมให้ดูบัญชี ควรทำอย่างไร?","ขอตรวจบัญชีร่วมกันและแจ้งครูที่ปรึกษา","เงียบไว้ไม่ให้เสียความรู้สึก","เก็บเงินเพิ่มจากทุกคน","ไล่เหรัญญิกออกทันที","ต้องตรวจสอบด้วยข้อมูลจริงและรายงานผู้ดูแล"],
+["ข้อใดช่วยให้การรับบริจาคโปร่งใส?","ออกใบรับเงินและรายงานยอดกับการใช้จ่าย","รับเงินสดโดยไม่จดบันทึก","บอกยอดเฉพาะคนรู้จัก","เก็บไว้ก่อนค่อยแจ้ง","หลักฐานและรายงานทำให้ผู้บริจาคมั่นใจ"],
+["ผู้เสนอราคารู้เกณฑ์ล่วงหน้าจากคนในหน่วยงาน ขัดหลักโปร่งใสเพราะอะไร?","ทำให้ผู้เสนอรายนั้นได้เปรียบไม่เท่าเทียม","เพราะทำให้ราคาถูกลง","เพราะเสนอได้เร็วขึ้น","เพราะไม่มีผลต่อใคร","การให้ข้อมูลพิเศษเฉพาะบางรายทำให้ไม่เป็นธรรม"],
+["ความโปร่งใสต่างจากการเปิดเผยทุกเรื่องอย่างไร?","เปิดเผยข้อมูลที่ควรเปิดให้ตรวจสอบได้ ส่วนความลับที่ชอบด้วยกฎหมายยังได้รับคุ้มครอง","ต้องเปิดข้อมูลส่วนตัวทุกคน","ปิดทุกอย่างเพื่อความปลอดภัย","เปิดเฉพาะข้อดี","ความโปร่งใสคือเปิดข้อมูลที่เกี่ยวกับการใช้อำนาจและเงินส่วนรวม"]]),
+R: mk(6,[
+["เพื่อนเสนอเงินให้ครูเพื่อแก้คะแนน การกระทำนี้คืออะไร?","การให้สินบน","น้ำใจต่อครู","การลงทุน","การขอบคุณ","การให้ประโยชน์เพื่อให้ใช้หน้าที่โดยมิชอบคือสินบน"],
+["ผู้ปกครองฝากของแพงให้ครูก่อนพิจารณาทุน แยกจากน้ำใจได้อย่างไร?","ให้เพื่อให้ตัดสินเอื้อประโยชน์คือสินบน","ของแพงถือเป็นน้ำใจเสมอ","ถ้าให้ลับ ๆ ถือว่าดี","ถ้าครูไม่ปฏิเสธก็ไม่ผิด","จุดสำคัญคือเจตนาและช่วงเวลาที่หวังผลการตัดสิน"],
+["รุ่นพี่ฝากให้รับน้องเข้าชมรมทั้งที่คะแนนไม่ถึงเกณฑ์ คือรูปแบบใด?","เส้นสาย","การแข่งขันที่เป็นธรรม","การคัดเลือกตามคะแนน","การจับสลาก","การเอื้อประโยชน์ตามความสนิทเป็นการใช้เส้นสาย"],
+["ครูเป็นกรรมการตัดสินประกวดที่ลูกของตนเข้าร่วม คือกรณีใด?","ผลประโยชน์ทับซ้อน","ความยุติธรรมโดยธรรมชาติ","การเสียสละ","การทำงานอาสา","ผลประโยชน์ส่วนตัวขัดกับหน้าที่ที่ต้องเป็นกลาง"],
+["เหรัญญิกนำเงินกองกลางไปใช้ส่วนตัวโดยไม่ได้รับอนุญาต คือการกระทำใด?","ยักยอก","ออมเงิน","ระดมทุน","การลงทุน","การเอาทรัพย์ที่ดูแลอยู่ไปเป็นของตนคือการยักยอก"],
+["เห็นเพื่อนส่งโพยในห้องสอบแล้วเพิกเฉยเพราะไม่ใช่เรื่องของเรา เป็นอย่างไร?","ทำให้การโกงกลายเป็นเรื่องปกติ","เป็นการเคารพความเป็นส่วนตัว","เป็นความมีน้ำใจ","ไม่มีผลอะไร","ความเพิกเฉยเปิดทางให้การโกงขยายตัว"],
+["ข้อใดคือน้ำใจ ไม่ใช่สินบน?","แจกขนมเพื่อนทุกคนในวันเกิด","ให้ของแก่กรรมการก่อนตัดสินรางวัล","ให้เงินครูเพื่อขอคะแนนเพิ่ม","ให้ของขวัญเพื่อขอเลื่อนกำหนดส่ง","ไม่ได้หวังให้ใครตัดสินเอื้อประโยชน์ จึงเป็นน้ำใจ"],
+["เจอข่าวโซเชียลว่าโรงเรียนโกงงบ แต่ไม่ระบุแหล่งที่มา ควรทำอย่างไร?","ตรวจสอบแหล่งข่าวก่อนแชร์","แชร์ทันทีเพื่อเตือนคนอื่น","เชื่อเพราะคนแชร์เยอะ","ลบข่าวทุกข่าว","ข้อมูลที่ไม่มีแหล่งต้องตรวจสอบก่อนเผยแพร่"],
+["โพสต์ภาพตัดต่อพร้อมข้อความเร่งให้แชร์ด่วน เป็นสัญญาณของอะไร?","ข่าวปลอมที่อาจปั่นอารมณ์","ข่าวที่เชื่อถือได้เสมอ","ข้อมูลจากภาครัฐ","งานวิจัย","ไม่มีแหล่งอ้างอิงและเร่งให้แชร์เป็นสัญญาณเตือน"],
+["เพื่อนบอก “ทุกคนก็ทำกัน โกงนิดเดียวไม่เป็นไร” ควรคิดอย่างไร?","คนส่วนมากทำก็ไม่ทำให้ผิดเป็นถูก","ถ้าทำกันมากก็ถือว่าถูก","โกงนิดเดียวไม่ถือว่าผิด","ไม่มีผลต่อสังคม","ความถูกต้องไม่ได้ขึ้นกับจำนวนคนที่ทำ"]]),
+O: mk(9,[
+["เป้าหมายที่ดีควรเป็นอย่างไร?","ชัดเจน วัดได้ และทำได้ทีละขั้น","กว้างและคลุมเครือ","ไม่ต้องมีเวลากำหนด","ไม่ต้องมีแผน","เป้าหมายที่ชัดช่วยให้เดินต่อได้จริง"],
+["ใกล้สอบแต่ยังไม่ได้อ่าน เพื่อนยื่นให้ลอก ควรทำอย่างไร?","ปฏิเสธ แล้วทบทวนเท่าที่ทำได้","ลอกเพราะไม่มีเวลา","ขอให้เพื่อนทำให้","โทษข้อสอบ","การลอกไม่ได้สร้างความรู้และเสียความซื่อสัตย์"],
+["ซื่อสัตย์แม้ไม่มีใครเห็นหมายถึงอะไร?","ทำถูกต้องเสมอเพราะเชื่อในคุณค่าของตน","ทำถูกเฉพาะตอนมีคนดู","ทำถูกเมื่อมีรางวัล","ทำถูกเมื่อเสี่ยงน้อย","ความซื่อสัตย์มาจากภายในใจ ไม่ใช่สายตาคนอื่น"],
+["สอบตกวิชาหนึ่ง ควรทำอย่างไรให้เติบโต?","วิเคราะห์จุดพลาดแล้วลองใหม่","เลิกเรียนวิชานั้น","โทษครู","หาทางแก้คะแนนลับ ๆ","การเรียนรู้จากความผิดพลาดคือก้าวต่อไป"],
+["ทางลัดอย่างการลอกการบ้านมีผลระยะยาวอย่างไร?","ขาดทักษะจริงและเสียความไว้วางใจ","เก่งขึ้นเร็ว","ได้ความเชื่อใจมากขึ้น","ไม่มีผลเลย","ผลลัพธ์ที่ได้มาง่ายไม่สร้างความสามารถที่แท้จริง"],
+["การพัฒนาตนเองอย่างยั่งยืนควรทำอย่างไร?","ฝึกทีละน้อยอย่างสม่ำเสมอ","ทำหนักวันเดียวแล้วหยุด","รอให้มีแรงบันดาลใจก่อน","เลียนแบบคนอื่นทุกอย่าง","ความต่อเนื่องสำคัญกว่าความหนักเป็นครั้งคราว"],
+["เจอกระเป๋าเงินในห้องเรียนโดยไม่มีใครเห็น ควรทำอย่างไร?","ส่งคืนเจ้าของหรือครู","เก็บไว้ก่อน","ใช้เฉพาะเงินเล็กน้อย","ทิ้งไว้ที่เดิม","การคืนของโดยไม่มีใครเห็นแสดงความซื่อสัตย์"],
+["ส่งงานล่าช้า วิธีใดถูกต้องที่สุด?","ยอมรับ ขอโทษ และส่งโดยเร็ว","อ้างว่าไฟล์เสีย","ให้เพื่อนช่วยโกหก","ไม่ส่งเลย","การรับผิดชอบตามจริงสร้างความน่าเชื่อถือ"],
+["เพื่อนในกลุ่มไม่ทำงานแต่จะใส่ชื่อ ควรทำอย่างไร?","คุยแบ่งงานให้ชัด และแจ้งครูตามจริงหากไม่แก้","ใส่ชื่อให้เพื่อนเงียบ ๆ","ทำคนเดียวและไม่บอกใคร","ลบชื่อเพื่อนเฉย ๆ","ความเป็นธรรมต้องอาศัยการสื่อสารและข้อมูลจริง"],
+["ข้อใดแสดงว่าล้มแล้วลุกจริง?","นำบทเรียนมาปรับวิธีทำต่อ","บอกว่าจะไม่พลาดอีกแต่ไม่แก้","โทษสถานการณ์","เลิกพยายาม","การปรับการกระทำคือสัญญาณของการเรียนรู้"]]),
+N: mk(2,[
+["ทุจริตหมายถึงข้อใด?","ใช้อำนาจหรือตำแหน่งโดยมิชอบเพื่อประโยชน์ตนหรือพวกพ้อง","การทำงานหนัก","การออมเงิน","การลาป่วย","ทุจริตคือการแสวงประโยชน์โดยไม่ชอบ"],
+["สินบนคืออะไร?","ทรัพย์สินหรือประโยชน์ที่ให้เพื่อจูงใจให้ใช้หน้าที่โดยมิชอบ","ค่าตอบแทนการทำงานตามสัญญา","เงินบริจาคที่เปิดเผยโดยชอบ","ค่าเดินทางตามระเบียบ","สินบนมุ่งให้ผู้รับทำหรือไม่ทำตามหน้าที่ให้ผู้ให้"],
+["ผลประโยชน์ทับซ้อนคืออะไร?","ผลประโยชน์ส่วนตนขัดกับหน้าที่ส่วนรวม","การทำงานสองที่","การเก็บของสะสม","การแบ่งงานเป็นทีม","เมื่อประโยชน์ส่วนตัวกระทบการตัดสินใจ จึงเกิดความทับซ้อน"],
+["ช่องทางแจ้งเบาะแสทุจริตของเจ้าหน้าที่รัฐ คือหน่วยงานใด?","สำนักงาน ป.ป.ช.","สโมสรกีฬา","บริษัทขนส่ง","สมาคมผู้ปกครองเท่านั้น","ป.ป.ช. เป็นหน่วยงานหลักด้านป้องกันและปราบปรามการทุจริต"],
+["ผู้แจ้งเบาะแสควรเตรียมข้อมูลใดให้ชัดเจน?","เหตุการณ์ วันที่ สถานที่ และหลักฐานเท่าที่มี","เฉพาะความรู้สึก","เฉพาะข่าวลือ","ชื่อเล่นของผู้เกี่ยวข้อง","ข้อมูลที่ชัดช่วยให้ตรวจสอบได้"],
+["ข้อใดคือหน้าที่ของพลเมืองดีต่อการต่อต้านทุจริต?","ไม่ให้ ไม่รับสินบน และช่วยสอดส่อง","เพิกเฉยเมื่อไม่เกี่ยวกับตน","ให้ของแลกสิทธิพิเศษ","เผยแพร่ข่าวที่ยังไม่ตรวจสอบ","พลเมืองมีส่วนช่วยป้องกันทุจริตได้"],
+["การให้และการรับสินบนมีบทลงโทษอย่างไร?","ทั้งผู้ให้และผู้รับอาจมีความผิดตามกฎหมาย","เฉพาะผู้รับมีความผิด","ไม่มีความผิดถ้าเป็นเงินน้อย","ผิดเฉพาะเมื่อถูกจับได้","การให้และรับสินบนเป็นความผิดทั้งสองฝ่าย"],
+["ข้อใดเป็นสิทธิของพลเมืองเกี่ยวกับการต่อต้านทุจริต?","ขอข้อมูลที่เปิดเผยได้และแจ้งเบาะแส","ตัดสินลงโทษผู้ถูกกล่าวหาเอง","ปิดบังข้อมูลส่วนรวม","รับสินบนอย่างถูกกฎหมาย","ประชาชนสามารถตรวจสอบและแจ้งเรื่องผ่านช่องทางที่กำหนด"],
+["ความรู้ช่วยป้องกันทุจริตได้อย่างไร?","ทำให้รู้ทันรูปแบบและกล้าตั้งคำถาม","ทำให้หลีกเลี่ยงการตรวจสอบได้","ทำให้ได้เปรียบคนอื่น","ทำให้ไม่ต้องรับผิดชอบ","เมื่อรู้ทันก็ปิดช่องโหว่และไม่ถูกหลอกง่าย"],
+["กรณีใดเป็นผลประโยชน์ทับซ้อน?","ครูพัสดุเลือกซื้อจากร้านญาติโดยไม่แจ้ง","ครูซื้อของตามราคากลางที่ประกาศ","ครูเปรียบเทียบสามร้านแล้วรายงาน","ครูให้ผู้ปกครองร่วมตรวจรับของ","การเลือกญาติโดยไม่เปิดเผยทำให้ขาดความเป็นกลาง"]]),
+G: mk(5,[
+["จิตอาสาหมายถึงข้อใด?","ช่วยเหลือสังคมโดยไม่หวังผลตอบแทน","ช่วยเมื่อได้รางวัล","ช่วยเฉพาะญาติ","ช่วยเพื่อให้ได้เครดิต","จิตอาสาคือการให้ด้วยใจ"],
+["ผู้ปกครองมอบตะกร้าของขวัญแพงแก่ครูก่อนประกาศผลทุน ถือเป็นอะไร?","ให้เพื่อแลกประโยชน์ เสี่ยงเป็นสินบน","ให้ด้วยใจบริสุทธิ์เสมอ","การบริจาคโปร่งใส","การเลี้ยงขอบคุณธรรมดา","เวลาและเจตนาทำให้ดูเป็นการหวังผลต่อการตัดสิน"],
+["การบริจาคอย่างโปร่งใสควรมีอะไร?","แจ้งยอดรับ จ่าย และหลักฐาน","เก็บเงียบ ๆ ไว้ก่อน","แจ้งเฉพาะผู้จัด","ไม่ต้องมีเอกสาร","ผู้บริจาคควรตรวจสอบได้ว่าเงินถูกใช้อย่างไร"],
+["วิธีช่วยเพื่อนที่ตกวิชาอย่างถูกวิธีคือข้อใด?","ติวให้เข้าใจ","ให้ลอกการบ้าน","ทำข้อสอบแทน","ส่งคำตอบให้ในห้องสอบ","การติวสร้างความรู้ ไม่ใช่ช่วยโกง"],
+["เพื่อนขอให้ส่งคำตอบทางแชตว่า “ช่วยเพื่อนหน่อย” ควรทำอย่างไร?","ปฏิเสธอย่างสุภาพ และเสนอติวหลังสอบ","ส่งให้เพราะเป็นเพื่อน","ส่งเฉพาะข้อยาก","ส่งแล้วลบแชต","ช่วยเพื่อนได้โดยไม่ต้องทำผิดกติกา"],
+["ชุมชนจัดเก็บขยะร่วมกัน การร่วมโดยมีน้ำใจจริงเป็นอย่างไร?","ลงมือช่วยโดยไม่หวังคะแนนหรือรางวัล","มาเฉพาะตอนมีกล้อง","ให้คนอื่นทำแทน","เรียกร้องค่าตอบแทนทุกครั้ง","น้ำใจคือการให้ด้วยใจ ไม่ใช่เพื่อผลตอบแทน"],
+["ชมรมระดมทุนช่วยเด็กด้อยโอกาสแล้วเงินเหลือ ควรทำอย่างไร?","ใช้ตามวัตถุประสงค์ที่แจ้งไว้หรือถามผู้บริจาค","แบ่งกันใช้ในชมรม","เก็บไว้เป็นส่วนตัว","ไม่ต้องแจ้งใคร","เงินบริจาคต้องใช้ตรงเจตนาของผู้ให้"],
+["ร้านให้ส่วนลดพิเศษเฉพาะเจ้าหน้าที่ที่ช่วยอนุมัติงานให้ร้าน ถือเป็นอะไร?","ให้เพื่อแลกประโยชน์ เสี่ยงเป็นสินบน","น้ำใจล้วน ๆ","การบริจาค","โปรโมชันทั่วไป","เป็นการให้เพื่อให้ตัดสินเอื้อประโยชน์"],
+["การแบ่งปันต่างจากการเอื้อพวกพ้องอย่างไร?","แบ่งปันโดยไม่เลือกปฏิบัติและไม่หวังสิทธิพิเศษ","แบ่งเฉพาะพวกเรา","แบ่งเพื่อให้ได้ตำแหน่ง","แบ่งเฉพาะคนมีอำนาจ","การเอื้อพวกพ้องคือการให้เพื่อผลประโยชน์ร่วมกัน"],
+["หัวหน้าชมรมแจกขนมเฉพาะสมาชิกที่โหวตให้ตน เข้าข่ายอะไร?","ใช้ของแจกจูงใจให้เลือกตน ไม่ใช่น้ำใจ","น้ำใจต่อสมาชิก","กิจกรรมสร้างสัมพันธ์ทั่วไป","การบริจาคโปร่งใส","การให้เพื่อแลกคะแนนเสียงทำลายความยุติธรรม"]])
+};
+const ST=[
+{k:"S",en:"Sufficient",th:"ความพอเพียง",q:"พอเพียง ไม่ใช่แค่การมี แต่คือการรู้จักพอ",m:"#2F8CFF",g:"#4FC3FF",d:"#0A1F5C",ic:["home","sprout","coin"],girl:0},
+{k:"T",en:"Transparent",th:"ความโปร่งใส",q:"เปิดเผย ตรวจสอบได้ สร้างความเชื่อมั่น",m:"#FFA826",g:"#FFC857",d:"#4A2A07",ic:["doc","lens","home"],girl:1},
+{k:"R",en:"Realise",th:"ความตื่นรู้",q:"ตื่นรู้ คิดเป็น แยกแยะได้ ไม่ตกเป็นเหยื่อของทุจริต",m:"#2ECC71",g:"#7CFFB0",d:"#07361C",ic:["bulb","lens","x"],girl:0},
+{k:"O",en:"Onward",th:"มุ่งไปข้างหน้า",q:"ไม่หยุดพัฒนา สู่อนาคตที่ดีกว่า",m:"#FF3B4E",g:"#FF7A7A",d:"#4A0A14",ic:["stairs","check","bulb"],girl:0},
+{k:"N",en:"Knowledge",th:"ความรู้",q:"ความรู้ สร้างปัญญา ป้องกันการทุจริต",m:"#9B5CFF",g:"#C79BFF",d:"#26105A",ic:["book","bulb","doc"],girl:1,glasses:1},
+{k:"G",en:"Generosity",th:"ความเอื้ออาทร",q:"แบ่งปัน สร้างสังคมดี เริ่มได้จากใจเรา",m:"#22D3EE",g:"#7DF3FF",d:"#053B4A",ic:["heart","heart","home"],girl:1,both:1}
+];
+const NAMES="กขคง";
+/* ================= ICONS ================= */
+const P={home:"M3 11l9-8 9 8v10H3z M9 21v-6h6v6",sprout:"M12 21v-9 M12 12c0-5-4-7-8-7 0 5 3 7 8 7z M12 14c0-4 3-6 7-6 0 4-3 6-7 6z",coin:"M5 12a7 6 0 0114 0v3a3 3 0 01-3 3H8a3 3 0 01-3-3z M9 9h4",doc:"M6 3h9l4 4v14H6z M9 12h7 M9 16h7",lens:"M10 4a6 6 0 100 12 6 6 0 000-12z M15 15l6 6",bulb:"M9 18h6 M10 21h4 M12 3a6 6 0 00-4 10c1 1 1 2 1 3h6c0-1 0-2 1-3a6 6 0 00-4-10z",stairs:"M3 21h5v-5h5v-5h5V6h3",book:"M3 5h8v15H3z M13 5h8v15h-8z",heart:"M12 20s-8-5-8-11a4.5 4.5 0 018-3 4.5 4.5 0 018 3c0 6-8 11-8 11z",lock:"M5 11h14v10H5z M8 11V8a4 4 0 018 0v3",unlock:"M5 11h14v10H5z M8 11V8a4 4 0 017-2",check:"M4 12l5 5L20 6",x:"M5 5l14 14M19 5L5 19",trophy:"M7 4h10v5a5 5 0 01-10 0z M5 5H3v2a3 3 0 003 3 M19 5h2v2a3 3 0 01-3 3 M12 14v4 M8 21h8",list:"M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01",sound:"M4 9v6h4l5 4V5L8 9z M16 9a4 4 0 010 6",mute:"M4 9v6h4l5 4V5L8 9z M17 9l4 6M21 9l-4 6"};
+const ic=n=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${P[n]}"/></svg>`;
+/* ================= STATE ================= */
+const KEY="staystrong_v1";let mem=null,soundOn=false;
+let state={best:[null,null,null,null,null,null]};let run=null,view="home",justOpened=-1;
+function load(){try{const s=localStorage.getItem(KEY);if(s)state=JSON.parse(s);else if(mem)state=mem}catch(e){if(mem)state=mem}}
+function save(){mem=JSON.parse(JSON.stringify(state));try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+const passed=i=>state.best[i]!==null&&state.best[i]>=8;
+const open=i=>i===0||passed(i-1);
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const sv=s=>`--m:${s.m};--g:${s.g};--d:${s.d}`;
+/* ================= RENDER ================= */
+// ตัวละครนักเรียนอนิเมะ (SVG ต้นฉบับ)
+function chr(s,i){
+ if(ASSETS[s.k])return `<img src="${ASSETS[s.k]}" alt="ภาพประกอบด่าน ${s.th}">`;
+ const g=s.girl,r=s.g;
+ const pair=s.both?`<g transform="translate(-34 8) scale(.82)">${body(r,0)}</g><g transform="translate(46 8) scale(.82)">${body(r,1)}</g>`:body(r,g,s.glasses);
+ const pos=[["8%","12%"],["78%","18%"],["14%","66%"]];
+ const chips=s.ic.map((n,k)=>`<span class="chip" style="left:${pos[k][0]};top:${pos[k][1]};animation-delay:${k*.5}s">${ic(n)}</span>`).join("");
+ return `${chips}<svg class="chr" viewBox="0 0 200 230" role="img" aria-label="นักเรียนไทยสไตล์อนิเมะ ด่าน ${s.th}">${pair}${s.k==="G"?'<path d="M100 20c-4-9-18-5-14 6 3 6 14 12 14 12s11-6 14-12c4-11-10-15-14-6z" fill="#FF3B4E" stroke="#fff" stroke-width="2"/>':""}</svg>`}
+function body(r,girl,gl){
+ const hair=girl?`<path d="M62 68c0-30 18-44 38-44s38 14 38 44c-6-14-14-20-38-20s-32 6-38 20z" fill="#14142B"/><path d="M138 60c14 10 12 40 4 58-4-16-4-34-4-58z" fill="#14142B"/>`:`<path d="M62 70c-2-30 18-46 40-46s38 14 36 46c-6-12-12-18-22-20-10 6-24 6-34 0-10 2-16 8-20 20z" fill="#14142B"/>`;
+ const lower=girl?`<path d="M64 150h72l10 46H54z" fill="#1c2a6b" stroke="${r}" stroke-width="2"/>`:`<path d="M66 150h68l-4 54H106l-6-30-6 30H70z" fill="#1c2a6b" stroke="${r}" stroke-width="2"/>`;
+ return `<g>
+ <path d="M70 108h60l8 44H62z" fill="#F4F8FF" stroke="${r}" stroke-width="3"/><path d="M70 108h22l-6 44H62z" fill="#cfd9f0"/>
+ <path d="M78 108l-6 44M122 108l6 44" stroke="#2a3a8c" stroke-width="5" opacity=".7"/>${lower}
+ <rect x="56" y="112" width="16" height="30" rx="8" fill="${r}" opacity=".5"/>
+ <path d="M92 104h16v10l-8 8-8-8z" fill="#FFD9B8"/>
+ <circle cx="100" cy="76" r="32" fill="#FFD9B8" stroke="${r}" stroke-width="2"/>
+ <path d="M70 80a32 32 0 0012 22c-6-8-8-14-8-22z" fill="#f0b98e"/>${hair}
+ <ellipse cx="88" cy="80" rx="7" ry="9" fill="#14142B"/><ellipse cx="114" cy="80" rx="7" ry="9" fill="#14142B"/>
+ <circle cx="86" cy="76" r="3" fill="#fff"/><circle cx="112" cy="76" r="3" fill="#fff"/><circle cx="90" cy="84" r="1.6" fill="#fff"/><circle cx="116" cy="84" r="1.6" fill="#fff"/>
+ <ellipse cx="80" cy="92" rx="5" ry="3" fill="#ff8a8a" opacity=".5"/><ellipse cx="122" cy="92" rx="5" ry="3" fill="#ff8a8a" opacity=".5"/>
+ <path d="M94 96q6 5 12 0" stroke="#7a2e2e" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+ ${gl?`<circle cx="88" cy="80" r="11" fill="none" stroke="#fff" stroke-width="2.5"/><circle cx="114" cy="80" r="11" fill="none" stroke="#fff" stroke-width="2.5"/><path d="M99 80h4" stroke="#fff" stroke-width="2.5"/>`:""}
+ <path d="M64 150l-8 20 18 8z" fill="#F4F8FF" opacity="0"/>
+ <rect x="104" y="128" width="30" height="22" rx="3" fill="${r}" stroke="#fff" stroke-width="2"/><path d="M119 128v22" stroke="#fff" stroke-width="2"/>
+ </g>`}
+function logo(){
+ const o=`<i class="o">O<svg class="crown" viewBox="0 0 40 24"><path d="M2 22L6 4l9 9 5-11 5 11 9-9 4 18z" fill="#FFB020" stroke="#050B2A" stroke-width="2.5" stroke-linejoin="round"/></svg><svg class="ban" viewBox="0 0 100 100"><circle cx="50" cy="50" r="38" fill="#F4F8FF"/><rect x="26" y="34" width="48" height="26" rx="3" fill="#2ECC71" stroke="#0c6b35" stroke-width="3"/><circle cx="50" cy="47" r="7" fill="#b9f5cf" stroke="#0c6b35" stroke-width="2"/><path d="M22 68c10-8 18-10 28-8 10-2 18 0 28 8-8 6-20 8-28 6-8 2-20 0-28-6z" fill="#FFD9B8" stroke="#050B2A" stroke-width="2.5"/><circle cx="50" cy="50" r="38" fill="none" stroke="#A51931" stroke-width="9"/><path d="M23 77L77 23" stroke="#A51931" stroke-width="9" stroke-linecap="round"/></svg></i>`;
+ return `<h1 class="logo" aria-label="Stay STRONG"><span class="stay" aria-hidden="true">Stay</span><span class="strong" aria-hidden="true"><span class="lay back">STR<i class="o" style="font-style:normal">O</i>NG</span><span class="lay front">STR${o}NG</span></span></h1>`}
+function homeCard(s,i){
+ const op=open(i),ps=passed(i),cls=ps?"done":op?"play":"locked";
+ const nextOpen=i<5&&passed(i);
+ const foot=i===5?`<div class="foot gtrophy ${ps?"on":""}">${ic("trophy")}<span style="color:#fff">คุณคือพลเมืองดีที่ต่อต้านการทุจริต</span></div>`:`<div class="foot ${nextOpen&&justOpened===i?"open":""}">${ic(nextOpen?"unlock":"lock")}<span>ปลดล็อกด่านที่ ${i+2}</span></div>`;
+ const rule=i===5?"ตอบถูก ≥ 8 ข้อ (80%) จึงจะจบเกม":"ตอบถูก ≥ 8 ข้อ (80%) จึงจะปลดล็อกด่านถัดไป";
+ return `<div class="cw ${cls}" style="${sv(s)};--i:${i}"><div class="c"><div class="ci">
+ ${op?"":`<div class="lk">${ic("lock")}<span>ผ่านด่านก่อนหน้าเพื่อปลดล็อก</span></div>`}
+ ${ps?`<div class="done">${ic("check")} ถูกต้อง</div>`:""}
+ <div class="ch"><div class="hex">${s.k}</div><div><div class="en">${s.en}</div><div class="th">${s.th}</div></div></div>
+ <div class="art">${chr(s,i)}</div>
+ <div class="quote">“${s.q}”</div>
+ <div class="pan"><b>${ic("list")}10 ข้อ</b><span>${rule}</span></div>
+ ${ps?`<div class="sc">คะแนนดีที่สุด ${state.best[i]}/10</div>`:""}
+ ${foot}
+ ${op?`<button class="btn" style="--b1:${s.g};--b2:${s.m}" onclick="intro(${i})" aria-label="${ps?"เล่นด่าน "+s.th+" อีกครั้ง":"เริ่มด่าน "+s.th}">${ps?"เล่นอีกครั้ง":"เริ่มด่าน"}</button>`:`<button class="btn gr" disabled aria-label="ด่าน ${s.th} ยังล็อกอยู่">ล็อก</button>`}
+ </div></div></div>`}
+function home(){
+ view="home";
+ const any=state.best.some(b=>b!==null);
+ app.innerHTML=`<section class="hero">${ASSETS.hero?`<img src="${ASSETS.hero}" alt="" style="max-height:200px">`:""}${logo()}
+ <div><span class="banner sk">6 ด่านหลัก 6 พลัง สร้างสังคมไทยไร้ทุจริต</span></div>
+ <p class="tag"><span>หยุดการทุจริต</span> เริ่มได้จากเรา</p><p class="tag">เริ่มเล็กๆ เปลี่ยนโลกได้</p></section>
+ <div class="row"><button class="btn" onclick="cont()">${any?"เล่นต่อ":"เริ่มเล่น"}</button>${any?`<button class="btn sec" onclick="askReset()">เริ่มใหม่ทั้งหมด</button>`:""}</div>
+ <section class="grid">${ST.map(homeCard).join("")}</section>
+ <section class="rules"><h2 class="sk">กติกาการเล่น</h2><ol><li>แต่ละด่านมีคำถาม 10 ข้อ</li><li>ต้องได้คะแนนอย่างน้อย 8 ข้อ (80%)</li><li>หากได้คะแนนไม่ถึงเกณฑ์ จะไม่สามารถปลดล็อกด่านถัดไปได้ ต้องกลับมาเล่นด่านเดิมใหม่</li></ol></section>
+ <p class="slog sk">คนดี เริ่มได้ที่เรา สังคมไทยไร้ทุจริต</p><div class="ribbon"></div>`;
+ justOpened=-1;window.scrollTo(0,0)}
+function cont(){let t=ST.findIndex((s,i)=>!passed(i));if(t<0)return win();intro(t)}
+function intro(i){
+ const s=ST[i];view="intro";
+ app.innerHTML=`<div class="panel wrap" style="${sv(s)};filter:drop-shadow(0 0 14px ${s.g})"><div style="display:flex;justify-content:center"><div class="hex big" style="${sv(s)}">${s.k}</div></div>
+ <div class="en" style="font-size:30px;margin-top:8px">${s.en}</div><div class="th" style="font-size:30px">${s.th}</div>
+ <div class="art">${chr(s,i)}</div><p class="quote" style="font-size:19px">“${s.q}”</p>
+ <div class="row"><button class="btn" style="--b1:${s.g};--b2:${s.m}" onclick="start(${i})">เริ่มด่าน</button><button class="btn gr" onclick="home()">กลับหน้าแรก</button></div></div>`;window.scrollTo(0,0)}
+function start(i){
+ const list=shuffle(QUESTIONS[ST[i].k]).map(q=>{const idx=shuffle([0,1,2,3]);return{q:q.q,c:idx.map(k=>q.choices[k]),a:idx.indexOf(q.answer),e:q.explain}});
+ run={s:i,list,i:0,score:0,picked:null,res:[],wrong:[]};quiz()}
+function quiz(){
+ view="quiz";const s=ST[run.s],q=run.list[run.i],pk=run.picked;
+ const prog=run.list.map((_,k)=>`<i class="${k<run.res.length?(run.res[k]?"ok":"no"):k===run.i?"cur":""}"></i>`).join("");
+ const opts=q.c.map((t,k)=>{let c="opt";if(pk!==null){if(k===q.a)c+=" right";else if(k===pk)c+=" wrong";else c+=" dim"}
+  return `<button class="${c}" ${pk!==null?"disabled":""} onclick="pick(${k})" aria-label="ตัวเลือก ${NAMES[k]} ${t}"><span class="hx">${NAMES[k]}</span><span>${t}</span>${pk!==null&&k===q.a?ic("check").replace("<svg","<svg style='width:24px;margin-left:auto;color:#2ECC71'"):""}</button>`}).join("");
+ const ex=pk!==null?`<div class="exp ${pk===q.a?"ok":"bad"}" role="status"><b>${pk===q.a?"ถูกต้อง!":"ยังไม่ถูก"}</b> ${q.e}</div><div class="row"><button class="btn" style="--b1:${s.g};--b2:${s.m}" onclick="nextQ()">${run.i===9?"ดูผลคะแนน":"ข้อถัดไป"}</button></div>`:"";
+ app.innerHTML=`<div class="panel wrap" style="${sv(s)};filter:drop-shadow(0 0 12px ${s.g})"><div class="hd"><div class="ch"><div class="hex" style="width:44px;height:50px;font-size:28px">${s.k}</div><b class="sk">${s.th}</b></div><b>ข้อ ${run.i+1}/10</b><b style="color:#7CFFB0">คะแนน ${run.score}</b></div>
+ <div class="prog" aria-hidden="true">${prog}</div><p class="qt">${q.q}</p><div class="opts">${opts}</div>${ex}</div>`;
+ if(pk!==null)app.querySelector(".exp").scrollIntoView({block:"nearest",behavior:"smooth"})}
+function pick(k){if(run.picked!==null)return;const q=run.list[run.i];run.picked=k;const ok=k===q.a;run.res.push(ok);if(ok){run.score++;beep([660,880])}else{run.wrong.push({q:q.q,mine:q.c[k],right:q.c[q.a],e:q.e});beep([200,150])}quiz()}
+function nextQ(){run.picked=null;run.i++;if(run.i<10)return quiz();finish()}
+function finish(){
+ const s=run.s,sc=run.score,ok=sc>=8,was=passed(s);
+ if(state.best[s]===null||sc>state.best[s])state.best[s]=sc;save();
+ if(ok&&!was&&s<5)justOpened=s;
+ if(ok&&s===5)return win(true);
+ view="result";const t=ST[s];
+ const rv=run.wrong.length?`<h3 style="margin-top:18px">ทบทวนข้อที่ตอบผิด</h3><div class="rv">${run.wrong.map(w=>`<div>${w.q}<small>คุณตอบ: ${w.mine}</small><em>เฉลย: ${w.right}</em>${w.e}</div>`).join("")}</div>`:"";
+ app.innerHTML=`<div class="panel wrap" style="${sv(t)};filter:drop-shadow(0 0 14px ${ok?"#2ECC71":"#FF3B4E"})"><div class="big">${sc}/10</div><p style="font-size:22px;font-weight:800">${sc*10}%</p>
+ <p class="${ok?"sc":""}" style="font-size:20px;font-weight:800;margin:10px 0;color:${ok?"#7CFFB0":"#FF9aa5"}">${ok?"ผ่านด่านแล้ว! ปลดล็อกด่านถัดไป":"ยังไม่ถึงเกณฑ์ 80% ต้องกลับมาเล่นด่านเดิมใหม่"}</p>
+ <div class="row">${ok?`<button class="btn" onclick="intro(${s+1})">ไปด่านถัดไป</button>`:`<button class="btn" onclick="start(${s})">เล่นด่านนี้ใหม่</button>`}<button class="btn gr" onclick="home()">กลับหน้าแรก</button></div>${rv}</div>`;
+ if(ok){confetti(120);beep([523,659,784,1047])}window.scrollTo(0,0)}
+function win(fresh){
+ view="win";
+ app.innerHTML=`<div class="panel wrap" style="--g:#FFB020;--m:#FF6A00;filter:drop-shadow(0 0 18px #FFB020)"><div class="rays"><svg class="trophy" viewBox="0 0 120 130" role="img" aria-label="ถ้วยรางวัลทอง"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFF27A"/><stop offset=".5" stop-color="#FFB020"/><stop offset="1" stop-color="#C46A00"/></linearGradient></defs><path d="M30 10h60v34a30 30 0 01-60 0z" fill="url(#gg)" stroke="#7a4300" stroke-width="3"/><path d="M30 18H10c0 20 8 30 22 32M90 18h20c0 20-8 30-22 32" fill="none" stroke="#FFB020" stroke-width="7"/><path d="M52 72h16v22H52z" fill="url(#gg)" stroke="#7a4300" stroke-width="3"/><path d="M34 94h52l6 22H28z" fill="url(#gg)" stroke="#7a4300" stroke-width="3"/><path d="M60 22l5 10 11 2-8 8 2 11-10-5-10 5 2-11-8-8 11-2z" fill="#fff" opacity=".9"/></svg></div>
+ <h2 class="sk" style="font-size:clamp(24px,6vw,36px);color:#FFE27A;text-shadow:0 0 14px #FFB020">คุณคือพลเมืองดีที่ต่อต้านการทุจริต</h2>
+ <div class="sum">${ST.map((s,i)=>`<div style="border:2px solid ${s.g};color:${s.g}">${s.k} ${s.th}<br><span style="color:#fff">${state.best[i]===null?"-":state.best[i]}/10</span></div>`).join("")}</div>
+ <p class="sk" style="font-size:22px">หยุดทุจริต เริ่มที่ตัวเรา</p>
+ <div class="row"><button class="btn" onclick="askReset()">เล่นใหม่ทั้งหมด</button><button class="btn sec" onclick="home()">กลับหน้าแรก</button></div></div>`;
+ if(fresh!==false){confetti(220);setTimeout(()=>confetti(160),700);beep([523,659,784,1047,1319])}window.scrollTo(0,0)}
+function askReset(){
+ const m=document.createElement("div");m.className="mod";m.setAttribute("role","dialog");m.setAttribute("aria-modal","true");
+ m.innerHTML=`<div class="panel" style="--g:#FF7A7A;--m:#FF3B4E"><h2>เริ่มใหม่ทั้งหมด?</h2><p style="margin:10px 0">ความคืบหน้าและคะแนนทุกด่านจะถูกลบ</p><div class="row"><button class="btn" id="yes" style="--b1:#FF7A7A;--b2:#FF3B4E">ยืนยัน ลบทั้งหมด</button><button class="btn gr" id="no">ยกเลิก</button></div></div>`;
+ document.body.appendChild(m);m.querySelector("#no").focus();
+ m.querySelector("#no").onclick=()=>m.remove();
+ m.querySelector("#yes").onclick=()=>{state={best:[null,null,null,null,null,null]};save();m.remove();home()};
+ m.onkeydown=e=>{if(e.key==="Escape")m.remove()}}
+/* ================= EFFECTS ================= */
+function sky(){// ซิลูเอทตึกระฟ้า 3 ชั้น
+ let seed=7;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;let h="";
+ [[.35,"#6fa8e8",300],[.55,"#2d5aa8",230],[.8,"#0a1a5c",160]].forEach(([o,c,mx])=>{let x=0;h+=`<g fill="${c}" opacity="${o+.2}">`;while(x<1200){const w=30+rnd()*50,ht=60+rnd()*(mx-60);h+=`<rect x="${x}" y="${400-ht}" width="${w}" height="${ht}"/>`;if(rnd()>.7)h+=`<rect x="${x+w/2-2}" y="${400-ht-30}" width="4" height="30"/>`;x+=w+4}h+="</g>"});
+ document.getElementById("sky1").innerHTML=h}
+const cv=document.getElementById("cf"),cx=cv.getContext("2d");let ps=[],raf=0;
+function confetti(n){if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;cv.width=innerWidth;cv.height=innerHeight;
+ const cols=["#FFB020","#FF3B4E","#2F8CFF","#2ECC71","#9B5CFF","#22D3EE","#fff"];
+ for(let i=0;i<n;i++)ps.push({x:innerWidth/2,y:innerHeight*.35,vx:(Math.random()-.5)*16,vy:-Math.random()*14-3,r:Math.random()*6+3,c:cols[i%7],a:Math.random()*6});
+ if(!raf)raf=requestAnimationFrame(tick)}
+function tick(){cx.clearRect(0,0,cv.width,cv.height);ps=ps.filter(p=>p.y<cv.height+20);
+ ps.forEach(p=>{p.vy+=.35;p.x+=p.vx;p.y+=p.vy;p.a+=.2;cx.fillStyle=p.c;cx.save();cx.translate(p.x,p.y);cx.rotate(p.a);cx.fillRect(-p.r,-p.r/2,p.r*2,p.r);cx.restore()});
+ raf=ps.length?requestAnimationFrame(tick):0;if(!raf)cx.clearRect(0,0,cv.width,cv.height)}
+let ac=null;function beep(fs){if(!soundOn)return;try{ac=ac||new(window.AudioContext||window.webkitAudioContext)();fs.forEach((f,i)=>{const o=ac.createOscillator(),g=ac.createGain();o.type="triangle";o.frequency.value=f;o.connect(g);g.connect(ac.destination);const t=ac.currentTime+i*.11;g.gain.setValueAtTime(.12,t);g.gain.exponentialRampToValueAtTime(.001,t+.2);o.start(t);o.stop(t+.22)})}catch(e){}}
+const sb=document.getElementById("snd");
+function sndUI(){sb.innerHTML=ic(soundOn?"sound":"mute");sb.setAttribute("aria-pressed",soundOn)}
+sb.onclick=()=>{soundOn=!soundOn;sndUI();beep([660])};
+/* ================= INIT ================= */
+const app=document.getElementById("app");
+sky();sndUI();load();home();
+</script>
+</body>
+</html>
